@@ -5,6 +5,7 @@ import ReportItemMenu from 'components/report-item-menu';
 import DragDrop from 'components/dragDrop';
 import TableBuilder from 'components/tableBuilder';
 import ChartBuilder from 'components/chartBuilder';
+import SelectedCard from 'components/selectedCard';
 
 class Main extends React.Component {
 
@@ -49,6 +50,8 @@ class Main extends React.Component {
         this.options = {
             animation: true
         };
+        this.selectedCard = {title: "Bar Chart", image: "/some/path", type: "Bar", configOptions: {title: "", url: ""}};
+
     }
 
     render() {
@@ -59,6 +62,8 @@ class Main extends React.Component {
                 <div id="dropzone">
                     </div>
                 <ChartBuilder type={this.type} data={this.data} options={this.options}/>
+
+                <SelectedCard type={this.selectedCard.type} />
             </div>
         );
     }
