@@ -11,3 +11,10 @@ li {
     height: 400px;
     background-color: grey;
 }
+
+.card-title-holder {
+    background-color: rgba(0, 0, 0, 0.6);
+    .card-title {
+        color: white;
+    }
+}

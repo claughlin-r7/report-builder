@@ -49,8 +49,8 @@ class Main extends React.Component {
         this.options = {
             animation: true
         };
-        this.cardItems = [{title: "Bar Chart", configOptions: ""}, {title: "Pie Chart", configOptions: ""},
-            {title: "Line Graph", configOptions: ""}]
+        this.cardItems = [{title: "Bar Chart", image: "test_image.jpg", type: "Bar", configOptions: {title: "", url: ""}}, {title: "Pie Chart", image: "", type: "Pie", configOptions: {title: "", url: ""}},
+            {title: "Line Chart", image: "", type: "Line", configOptions: {title: "", url: ""}}]
     }
 
     render() {
