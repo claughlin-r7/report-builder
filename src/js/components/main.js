@@ -49,12 +49,14 @@ class Main extends React.Component {
         this.options = {
             animation: true
         };
+        this.cardItems = [{title: "Bar Chart", configOptions: ""}, {title: "Pie Chart", configOptions: ""},
+            {title: "Line Graph", configOptions: ""}]
     }
 
     render() {
         return (
             <div className='container'>
-                <ReportItemMenu />
+                <ReportItemMenu cardItems={this.cardItems}/>
                 <TableBuilder headers={this.headers} tableData={this.tableData}/>
                 <div id="dropzone">
                     </div>
