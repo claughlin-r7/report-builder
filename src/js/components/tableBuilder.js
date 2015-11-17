@@ -12,8 +12,18 @@ class TableBuilder extends React.Component {
             multiSelectable: false,
             enableSelectAll: false,
             deselectOnClickaway: true,
-            height: '300px'
+            height: '300px',
+            columns: ['Id', 'Name', 'Status'],
+            tableData: [
+
+            ]
         };
+    }
+
+    renderTableColumns(column) {
+        return (
+            <TableHeaderColumn tooltip={'The' + column}>{column}</TableHeaderColumn>
+        );
     }
 
     render() {
@@ -32,9 +42,7 @@ class TableBuilder extends React.Component {
                         </TableHeaderColumn>
                     </TableRow>
                     <TableRow>
-                        <TableHeaderColumn tooltip='The ID'>ID</TableHeaderColumn>
-                        <TableHeaderColumn tooltip='The Name'>Name</TableHeaderColumn>
-                        <TableHeaderColumn tooltip='The Status'>Status</TableHeaderColumn>
+                        {this.state.columns.map(this.renderTableColumns)}
                     </TableRow>
                 </TableHeader>
                 <TableBody
@@ -77,18 +85,6 @@ class TableBuilder extends React.Component {
                         <TableRowColumn>Employed</TableRowColumn>
                     </TableRow>
                 </TableBody>
-                <TableFooter>
-                    <TableRow>
-                        <TableRowColumn>ID</TableRowColumn>
-                        <TableRowColumn>Name</TableRowColumn>
-                        <TableRowColumn>Status</TableRowColumn>
-                    </TableRow>
-                    <TableRow>
-                        <TableRowColumn colSpan="3" style={{textAlign: 'center'}}>
-                            Super Footer
-                        </TableRowColumn>
-                    </TableRow>
-                </TableFooter>
             </Table>
         );
     }
