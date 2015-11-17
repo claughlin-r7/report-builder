@@ -3,6 +3,9 @@ import React from 'react';
 
 class ReportItem extends React.Component {
 
+    componentWillReceiveProps(previousProp, nextProp) {
+        console.log(previousProp);
+    }
     constructor(props) {
         super(props);
         var _this = this;
@@ -18,11 +21,22 @@ class ReportItem extends React.Component {
     }
 
     render() {
-        return (
-            <div className="card white darken-1" style={this.state.styles}>
+        if (this.props.data.editable) {
+            return (
 
-            </div>
-        )
+                <div id="selectedCard">
+                    <input placeholder="Enter title"> {this.props.title} </input>
+                    <input placeholder="Enter url"> {this.props.title} </input>
+                    <button type="button" onClick={this.saveCard}> "Save" </button>
+                    <button type="button" onClick={this.clearFields}> "Cancel" </button>
+                </div>
+            );
+        } else {
+            return (
+                <div className="card blue-grey darken-1 " data-type={this.props.data.type} style={this.state.styles}></div>
+            )
+        }
+
     }
 }
 

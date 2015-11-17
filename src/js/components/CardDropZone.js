@@ -1,11 +1,12 @@
 import React from 'react';
 import Card from 'components/report-item';
-
-
-class ReportItemMenu extends React.Component {
-
+class CardDropZone extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    componentWillReceiveProps() {
+        console.log("Here");
     }
 
     renderCards() {
@@ -20,11 +21,11 @@ class ReportItemMenu extends React.Component {
 
     render() {
         return (
-            <ul id="slide-out" className="side-nav fixed">
+            <div id="dropzone">
                 {this.renderCards()}
-            </ul>
+            </div>
         );
     }
 }
 
-export default ReportItemMenu;
+export default CardDropZone;

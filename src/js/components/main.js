@@ -5,8 +5,16 @@ import ReportItemMenu from 'components/report-item-menu';
 import DragDrop from 'components/dragDrop';
 import TableBuilder from 'components/tableBuilder';
 import ChartBuilder from 'components/chartBuilder';
+import Dropzone from 'components/CardDropZone';
+import $ from 'jquery';
 
 class Main extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            renderedCardItems: []
+        }
+    }
 
     componentWillMount() {
         this.menuItems = [
@@ -49,6 +57,7 @@ class Main extends React.Component {
         this.options = {
             animation: true
         };
+        this.renderedCardItems = [];
         this.cardItems = [
             {image: "bar.svg", type: "Bar", configOptions: {title: "", url: ""}},
             {title: "Pie Chart", image: "pie.svg", type: "Pie", configOptions: {title: "", url: ""}},
@@ -66,8 +75,7 @@ class Main extends React.Component {
             <div className='container'>
                 <ReportItemMenu cardItems={this.cardItems}/>
                 <TableBuilder headers={this.headers} tableData={this.tableData}/>
-                <div id="dropzone">
-                    </div>
+                <Dropzone cardItems={this.renderedCardItems}/>
                 <ChartBuilder type={this.type} data={this.data} options={this.options}/>
             </div>
         );
@@ -75,6 +83,8 @@ class Main extends React.Component {
     componentDidMount() {
         var left = document.getElementById("slide-out");
         var right = document.getElementById("dropzone");
+        console.log(left);
+        var _this = this;
 
         Dragula([left, right], {
             copy: function (el, source) {
@@ -83,6 +93,25 @@ class Main extends React.Component {
             accepts: function (el, target) {
                 return target !== left
             }
+        }).on("drop", (el, source) => {
+            //this.cardItems.find((item) => {
+            //    if (el.firstChild.attributes[1].value === item.type) {
+            //        var selected = $.extend(true, {}, item);
+            //        selected.editable = true;
+            //        _this.renderedCardItems.push(selected);
+            //        _this.setState({renderedCardItems: _this.renderedCardItems});
+            //        el.remove();
+            //    }
+            //});
+            $.each(this.cardItems, (index, item) => {
+                if (el.firstChild.attributes[1].value === item.type) {
+                    var selected = $.extend(true, {}, item);
+                    selected.editable = true;
+                    _this.renderedCardItems.push(selected);
+                    _this.setState({renderedCardItems: _this.renderedCardItems});
+                    el.remove();
+                }
+            });
         });
     }
 }
