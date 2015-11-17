@@ -1,5 +1,6 @@
 import React from 'react';
-import LeftNav from 'material-ui/lib/left-nav'
+import LeftNav from 'material-ui/lib/left-nav';
+import TableBuilder from 'components/tableBuilder';
 
 class Main extends React.Component {
 
@@ -15,6 +16,7 @@ class Main extends React.Component {
         return (
             <div>
                 <LeftNav ref="leftNav" menuItems={this.menuItems} />
+                <TableBuilder />
             </div>
         );
     }
