@@ -10,6 +10,8 @@ class ReportCard extends React.Component {
         if (ChartTypes.indexOf(card.type) !== -1) {
             //Render Chart in card
             return <ChartBuilder type={card.type} data={ChartData[card.type]} />
+        } else {
+            return <TableBuilder type={card.type} data={ChartData[card.type]} />
         }
     }
 
