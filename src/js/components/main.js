@@ -52,12 +52,14 @@ class Main extends React.Component {
         };
         this.selectedCard = {title: "Bar Chart", image: "/some/path", type: "Bar", configOptions: {title: "", url: ""}};
 
+        this.cardItems = [{title: "Bar Chart", image: "test_image.jpg", type: "Bar", configOptions: {title: "", url: ""}}, {title: "Pie Chart", image: "", type: "Pie", configOptions: {title: "", url: ""}},
+            {title: "Line Chart", image: "", type: "Line", configOptions: {title: "", url: ""}}];
     }
 
     render() {
         return (
             <div className='container'>
-                <ReportItemMenu />
+                <ReportItemMenu cardItems={this.cardItems}/>
                 <TableBuilder headers={this.headers} tableData={this.tableData}/>
                 <div id="dropzone">
                     </div>
