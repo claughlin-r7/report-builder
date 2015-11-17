@@ -1,20 +1,16 @@
 import React from 'react';
 import LeftNav from 'material-ui/lib/left-nav'
+import ReportItemMenu from 'components/report-item-menu'
 
 class Main extends React.Component {
 
-    componentWillMount() {
-        this.menuItems = [
-            { text: 'Get Started' },
-            { text: 'Customization' },
-            { text: 'Components' }
-        ];
-    }
-
     render() {
         return (
-            <div>
-                <LeftNav ref="leftNav" menuItems={this.menuItems} />
+            <div className='container'>
+                    <ReportItemMenu />
+                <div>
+                    CONTENT GOES HERE
+                </div>
             </div>
         );
     }
