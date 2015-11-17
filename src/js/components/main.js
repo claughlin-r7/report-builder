@@ -74,9 +74,7 @@ class Main extends React.Component {
         return (
             <div className='container'>
                 <ReportItemMenu cardItems={this.cardItems}/>
-                <TableBuilder headers={this.headers} tableData={this.tableData}/>
                 <Dropzone cardItems={this.renderedCardItems}/>
-                <ChartBuilder type={this.type} data={this.data} options={this.options}/>
             </div>
         );
     }
