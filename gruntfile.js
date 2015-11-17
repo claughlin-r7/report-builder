@@ -65,7 +65,8 @@ module.exports = function (grunt) {
             assets: {
                 files: [
                     {src : '<%= config.assets %>/*', dest : '<%= config.pub %>/', expand: true, flatten: true},
-                    {src : 'node_modules/react-bootstrap-table/css/react-bootstrap-table.min.css', dest : '<%= config.pub %>/', expand: true, flatten: true}
+                    {src : 'node_modules/react-bootstrap-table/css/react-bootstrap-table.min.css', dest : '<%= config.pub %>/', expand: true, flatten: true},
+                    {src : 'node_modules/react-dragula/dist/dragula.min.css', dest : '<%= config.pub %>/', expand: true, flatten: true}
                 ]
             }
         },

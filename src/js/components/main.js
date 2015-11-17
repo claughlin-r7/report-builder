@@ -1,5 +1,8 @@
 import React from 'react';
+import ReactDom from 'react-dom';
+import Dragula from 'react-dragula';
 import ReportItemMenu from 'components/report-item-menu';
+import DragDrop from 'components/dragDrop';
 import TableBuilder from 'components/tableBuilder';
 
 class Main extends React.Component {
@@ -23,8 +26,16 @@ class Main extends React.Component {
             <div className='container'>
                 <ReportItemMenu />
                 <TableBuilder headers={this.headers} tableData={this.tableData}/>
+                <div id="dropzone">
+                    </div>
             </div>
         );
+    }
+    componentDidMount() {
+        var left = document.getElementById("slide-out");
+        var right = document.getElementById("dropzone");
+
+        Dragula([left, right]);
     }
 }
 
