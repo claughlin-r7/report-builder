@@ -11,7 +11,11 @@ class ReportItem extends React.Component {
         var _this = this;
         this.state = {
             styles: {
-                backgroundImage: 'url(' + _this.props.data.image + ')'
+                backgroundImage: 'url(' + _this.props.data.image + ')',
+                backgroundSize: '100%',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom',
+                height: '120px'
             }
         }
     }
