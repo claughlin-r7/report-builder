@@ -88,7 +88,16 @@ class Main extends React.Component {
                 return target !== left
             }
         }).on("drop", (el, source) => {
-            this.cardItems.find((item) => {
+            //this.cardItems.find((item) => {
+            //    if (el.firstChild.attributes[1].value === item.type) {
+            //        var selected = $.extend(true, {}, item);
+            //        selected.editable = true;
+            //        _this.renderedCardItems.push(selected);
+            //        _this.setState({renderedCardItems: _this.renderedCardItems});
+            //        el.remove();
+            //    }
+            //});
+            $.each(this.cardItems, (index, item) => {
                 if (el.firstChild.attributes[1].value === item.type) {
                     var selected = $.extend(true, {}, item);
                     selected.editable = true;
