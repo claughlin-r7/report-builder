@@ -1,4 +1,7 @@
 import React from 'react';
+import ReactDom from 'react-dom'
+import $ from 'jquery';
+import ReportCard from 'components/reportCard';
 
 
 class ReportItem extends React.Component {
@@ -19,16 +22,25 @@ class ReportItem extends React.Component {
             }
         }
     }
+    saveCard(evt, dom) {
+        this.setState({graphTitle: this.refs.titleInput.value, graphUrl: this.refs.urlInput.value, graphRendered: true});
+    }
+    clearFields() {
+
+    }
 
     render() {
-        if (this.props.data.editable) {
+        if (this.state.graphRendered) {
+            return <ReportCard card={this.props.data} />
+
+        } else if (this.props.data.editable) {
             return (
 
                 <div id="selectedCard">
-                    <input placeholder="Enter title"> {this.props.title} </input>
-                    <input placeholder="Enter url"> {this.props.title} </input>
-                    <button type="button" onClick={this.saveCard}> "Save" </button>
-                    <button type="button" onClick={this.clearFields}> "Cancel" </button>
+                    <input ref="titleInput" placeholder="Enter title"> {this.props.title} </input>
+                    <input ref="urlInput" placeholder="Enter url"> {this.props.url} </input>
+                    <button type="button" onClick={this.saveCard.bind(this)}> "Save" </button>
+                    <button type="button" onClick={this.clearFields.bind(this)}> "Cancel" </button>
                 </div>
             );
         } else {
