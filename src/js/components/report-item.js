@@ -23,6 +23,7 @@ class ReportItem extends React.Component {
     render() {
         if (this.props.data.editable) {
             return (
+
                 <div id="selectedCard">
                     <input placeholder="Enter title"> {this.props.title} </input>
                     <input placeholder="Enter url"> {this.props.title} </input>
@@ -43,24 +44,6 @@ class ReportItem extends React.Component {
         }
 
     }
-    //
-    //saveCard() {
-    //    // save shit
-    //}
-    //clearFields() {
-    //
-    //}
-    //
-    //render() {
-    //    return (
-    //        <div id="selectedCard">
-    //            <input placeholder="Enter title"> {this.props.title} </input>
-    //            <input placeholder="Enter url"> {this.props.title} </input>
-    //            <button type="button" onClick={this.saveCard}> "Save" </button>
-    //            <button type="button" onClick={this.clearFields}> "Cancel" </button>
-    //        </div>
-    //    );
-    //}
 }
 
 export default ReportItem;
