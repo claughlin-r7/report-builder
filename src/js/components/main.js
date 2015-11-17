@@ -17,7 +17,8 @@ class Main extends React.Component {
             [2, 'Jane', 'Sacked'],
             [3, 'Chris', 'Employed']
         ];
-        this.linechartData = {
+        this.type = "line";
+        this.data = {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
@@ -42,15 +43,15 @@ class Main extends React.Component {
                 }
             ]
         };
-        this.opts = {
+        this.options = {
             animation: true
-        }
+        };
     }
 
     render() {
         return (
             <div>
-                <ChartBuilder />
+                <ChartBuilder type={this.type} data={this.data} options={this.options}/>
             </div>
         );
     }
