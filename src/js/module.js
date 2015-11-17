@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RComp from 'components/rComp'
-import Report from 'components/report'
+import Main from 'components/main'
 import './../scss/main.scss';
 
 let reportData = {
@@ -10,4 +10,5 @@ let reportData = {
     ]
 };
 
-ReactDOM.render(<Report report={reportData}/>, document.getElementById('content'));
+//ReactDOM.render(<Report report={reportData}/>, document.getElementById('content'));
+ReactDOM.render(<Main/>, document.getElementById('content'));
