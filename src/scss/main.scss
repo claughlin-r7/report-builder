@@ -10,6 +10,9 @@ li {
     width: 600px;
     height: 400px;
     background-color: grey;
+    .card {
+        height: 100px;
+    }
 }
 
 .card-title-holder {
@@ -17,4 +20,11 @@ li {
     .card-title {
         color: white;
     }
+}
+
+#selectedCard {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    height: 100%;
+    width: 100%;
 }
