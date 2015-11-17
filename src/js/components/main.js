@@ -5,9 +5,16 @@ import ReportItemMenu from 'components/report-item-menu';
 import DragDrop from 'components/dragDrop';
 import TableBuilder from 'components/tableBuilder';
 import ChartBuilder from 'components/chartBuilder';
-import SelectedCard from 'components/selectedCard';
+import Dropzone from 'components/CardDropZone';
+import $ from 'jquery';
 
 class Main extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            renderedCardItems: []
+        }
+    }
 
     componentWillMount() {
         this.menuItems = [
@@ -50,28 +57,28 @@ class Main extends React.Component {
         this.options = {
             animation: true
         };
-        this.selectedCard = {title: "Bar Chart", image: "/some/path", type: "Bar", configOptions: {title: "", url: ""}};
 
         this.cardItems = [{title: "Bar Chart", image: "test_image.jpg", type: "Bar", configOptions: {title: "", url: ""}}, {title: "Pie Chart", image: "", type: "Pie", configOptions: {title: "", url: ""}},
             {title: "Line Chart", image: "", type: "Line", configOptions: {title: "", url: ""}}];
+        this.renderedCardItems = [];
     }
+
 
     render() {
         return (
             <div className='container'>
                 <ReportItemMenu cardItems={this.cardItems}/>
                 <TableBuilder headers={this.headers} tableData={this.tableData}/>
-                <div id="dropzone">
-                    </div>
+                <Dropzone cardItems={this.renderedCardItems}/>
                 <ChartBuilder type={this.type} data={this.data} options={this.options}/>
-
-                <SelectedCard type={this.selectedCard.type} />
             </div>
         );
     }
     componentDidMount() {
         var left = document.getElementById("slide-out");
         var right = document.getElementById("dropzone");
+        console.log(left);
+        var _this = this;
 
         Dragula([left, right], {
             copy: function (el, source) {
@@ -80,6 +87,16 @@ class Main extends React.Component {
             accepts: function (el, target) {
                 return target !== left
             }
+        }).on("drop", (el, source) => {
+            this.cardItems.find((item) => {
+                if (el.firstChild.attributes[1].value === item.type) {
+                    var selected = $.extend(true, {}, item);
+                    selected.editable = true;
+                    _this.renderedCardItems.push(selected);
+                    _this.setState({renderedCardItems: _this.renderedCardItems});
+                    el.remove();
+                }
+            });
         });
     }
 }

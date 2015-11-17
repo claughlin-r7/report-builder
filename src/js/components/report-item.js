@@ -3,6 +3,9 @@ import React from 'react';
 
 class ReportItem extends React.Component {
 
+    componentWillReceiveProps(previousProp, nextProp) {
+        console.log(previousProp);
+    }
     constructor(props) {
         super(props);
         var _this = this;
@@ -14,16 +17,46 @@ class ReportItem extends React.Component {
     }
 
     render() {
-        return (
-            <div className="card blue-grey darken-1" style={this.state.styles}>
-                <div className="card-content white-text">
-                    <a className="card-title-holder">
-                        <span className="card-title">{this.props.data.title}</span>
-                    </a>
+        if (this.props.data.editable) {
+            return (
+                <div id="selectedCard">
+                    <input placeholder="Enter title"> {this.props.title} </input>
+                    <input placeholder="Enter url"> {this.props.title} </input>
+                    <button type="button" onClick={this.saveCard}> "Save" </button>
+                    <button type="button" onClick={this.clearFields}> "Cancel" </button>
                 </div>
-            </div>
-        )
+            );
+        } else {
+            return (
+                <div className="card blue-grey darken-1 " data-type={this.props.data.type} style={this.state.styles}>
+                    <div className="card-content white-text">
+                        <a className="card-title-holder">
+                            <span className="card-title">{this.props.data.title}</span>
+                        </a>
+                    </div>
+                </div>
+            )
+        }
+
     }
+    //
+    //saveCard() {
+    //    // save shit
+    //}
+    //clearFields() {
+    //
+    //}
+    //
+    //render() {
+    //    return (
+    //        <div id="selectedCard">
+    //            <input placeholder="Enter title"> {this.props.title} </input>
+    //            <input placeholder="Enter url"> {this.props.title} </input>
+    //            <button type="button" onClick={this.saveCard}> "Save" </button>
+    //            <button type="button" onClick={this.clearFields}> "Cancel" </button>
+    //        </div>
+    //    );
+    //}
 }
 
 export default ReportItem;
