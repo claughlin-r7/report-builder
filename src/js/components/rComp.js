@@ -1,5 +1,4 @@
 import React from 'react';
-import Table from 'components/table'
 
 class Rcomp extends React.Component {
     render() {
@@ -15,9 +14,6 @@ class Rcomp extends React.Component {
 
         return (
             <div>This is the react view
-                <div>
-                    <Table tableData={tableData} tableColums={tableColums}/>
-                </div>
             </div>
         );
     }
