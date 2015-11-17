@@ -68,7 +68,14 @@ class Main extends React.Component {
         var left = document.getElementById("slide-out");
         var right = document.getElementById("dropzone");
 
-        Dragula([left, right]);
+        Dragula([left, right], {
+            copy: function (el, source) {
+                return source === left
+            },
+            accepts: function (el, target) {
+                return target !== left
+            }
+        });
     }
 }
 
