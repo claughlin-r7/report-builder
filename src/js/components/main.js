@@ -1,5 +1,5 @@
 import React from 'react';
-import LeftNav from 'material-ui/lib/left-nav';
+import ReportItemMenu from 'components/report-item-menu';
 import TableBuilder from 'components/tableBuilder';
 import ChartBuilder from 'components/chartBuilder';
 
@@ -50,7 +50,9 @@ class Main extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='container'>
+                <ReportItemMenu />
+                <TableBuilder headers={this.headers} tableData={this.tableData}/>
                 <ChartBuilder type={this.type} data={this.data} options={this.options}/>
             </div>
         );
