@@ -41,12 +41,5 @@ module.exports = {
     devServer: {
         contentBase: './tmp',
         historyApiFallback: true
-    },
-    eslint:{
-        configFile:"./.eslintrc",
-        emitError:true,
-        failOnError:true,
-        failOnWarning:false,
-        formatter:require("eslint-friendly-formatter")
     }
 };

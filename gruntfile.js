@@ -64,20 +64,10 @@ module.exports = function (grunt) {
         copy: {
             assets: {
                 files: [
-                    {src : '<%= config.assets %>/*', dest : '<%= config.pub %>/', expand: true, flatten: true}
+                    {src : '<%= config.assets %>/*', dest : '<%= config.pub %>/', expand: true, flatten: true},
+                    {src : 'node_modules/react-bootstrap-table/css/react-bootstrap-table.min.css', dest : '<%= config.pub %>/', expand: true, flatten: true}
                 ]
             }
-        },
-
-        jscs: {
-            src: 'src/js/**/*.js',
-            options: {
-                config: '.jscsrc'
-            }
-        },
-
-        eslint: {
-            target: ['src/js/**/*.js']
         },
 
         shell: {
@@ -90,9 +80,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.registerTask('build', ['checkStyle', 'clean', 'sass:min', 'shell:webpack']);
+    grunt.registerTask('build', ['clean', 'sass:min', 'shell:webpack']);
     grunt.registerTask('default', ['build']);
     grunt.registerTask('dev', ['clean', 'sass:dev', 'copy', 'shell:devServer']);
-    grunt.registerTask('checkStyle', ['jscs', 'eslint']);
-
 };
