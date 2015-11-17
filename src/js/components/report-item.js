@@ -36,13 +36,7 @@ class ReportItem extends React.Component {
             );
         } else {
             return (
-                <div className="card blue-grey darken-1 " data-type={this.props.data.type} style={this.state.styles}>
-                    <div className="card-content white-text">
-                        <a className="card-title-holder">
-                            <span className="card-title">{this.props.data.title}</span>
-                        </a>
-                    </div>
-                </div>
+                <div className="card blue-grey darken-1 " data-type={this.props.data.type} style={this.state.styles}></div>
             )
         }
 
