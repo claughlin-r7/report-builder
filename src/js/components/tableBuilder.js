@@ -3,6 +3,12 @@ import {Table, TableBody, TableFooter, TableHeader, TableHeaderColumn, TableRow,
 
 class TableBuilder extends React.Component {
     componentWillMount() {
+        this.headers = ['Id', 'Name', 'Status'];
+        this.tableData = [
+            [1, 'John Smith', 'Employed'],
+            [2, 'Jane', 'Sacked'],
+            [3, 'Chris', 'Employed']
+        ];
         this.state = {
             fixedHeader: true,
             stripedRows: false,
@@ -12,8 +18,8 @@ class TableBuilder extends React.Component {
             enableSelectAll: false,
             deselectOnClickaway: true,
             height: '300px',
-            columns: this.props.headers,
-            tableData: this.props.tableData
+            columns: this.headers,
+            tableData: this.tableData
         };
     }
 

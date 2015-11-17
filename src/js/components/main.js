@@ -59,14 +59,14 @@ class Main extends React.Component {
         };
         this.renderedCardItems = [];
         this.cardItems = [
-            {image: "bar.svg", type: "Bar", configOptions: {title: "", url: ""}},
-            {title: "Pie Chart", image: "pie.svg", type: "Pie", configOptions: {title: "", url: ""}},
-            {title: "Line Chart", image: "line.svg", type: "Line", configOptions: {title: "", url: ""}},
-            {title: "Nut Chart", image: "doughnut.svg", type: "Doughnut", configOptions: {title: "", url: ""}},
-            {title: "Polar Chart", image: "polar.svg", type: "Polar", configOptions: {title: "", url: ""}},
-            {title: "Radar Chart", image: "radar.svg", type: "Radar", configOptions: {title: "", url: ""}},
-            {title: "Table", image: "table.svg", type: "Table", configOptions: {title: "", url: ""}},
-            {title: "Text", image: "text.svg", type: "Text", configOptions: {title: "", url: ""}},
+            {image: "bar.svg", type: "bar", configOptions: {title: "", url: ""}},
+            {title: "Pie Chart", image: "pie.svg", type: "pie", configOptions: {title: "", url: ""}},
+            {title: "Line Chart", image: "line.svg", type: "line", configOptions: {title: "", url: ""}},
+            {title: "Nut Chart", image: "doughnut.svg", type: "doughnut", configOptions: {title: "", url: ""}},
+            {title: "Polar Chart", image: "polar.svg", type: "polar", configOptions: {title: "", url: ""}},
+            {title: "Radar Chart", image: "radar.svg", type: "radar", configOptions: {title: "", url: ""}},
+            {title: "Table", image: "table.svg", type: "table", configOptions: {title: "", url: ""}},
+            {title: "Text", image: "text.svg", type: "text", configOptions: {title: "", url: ""}}
         ]
     }
 
@@ -74,9 +74,7 @@ class Main extends React.Component {
         return (
             <div className='container'>
                 <ReportItemMenu cardItems={this.cardItems}/>
-                <TableBuilder headers={this.headers} tableData={this.tableData}/>
                 <Dropzone cardItems={this.renderedCardItems}/>
-                <ChartBuilder type={this.type} data={this.data} options={this.options}/>
             </div>
         );
     }

@@ -35,12 +35,15 @@ class ReportItem extends React.Component {
 
         } else if (this.props.data.editable) {
             return (
-
-                <div id="selectedCard">
-                    <input ref="titleInput" placeholder="Enter title"> {this.props.title} </input>
-                    <input ref="urlInput" placeholder="Enter url"> {this.props.url} </input>
-                    <button type="button" onClick={this.saveCard.bind(this)}> "Save" </button>
-                    <button type="button" onClick={this.clearFields.bind(this)}> "Cancel" </button>
+                <div className="card blue-grey darken-1 " data-type={this.props.data.type} style={this.state.styles}>
+                    <div id="selectedCard">
+                        <div className='card-content'>
+                            <input ref="titleInput" placeholder="Enter title"> {this.props.title} </input>
+                            <input ref="urlInput" placeholder="Enter url"> {this.props.title} </input>
+                            <button type="button" onClick={this.saveCard.bind(this)}> Save </button>
+                            <button type="button" onClick={this.clearFields.bind(this)}> Cancel </button>
+                        </div>
+                    </div>
                 </div>
             );
         } else {
