@@ -12,6 +12,9 @@ li {
     background-color: #E8ECF0;
     left: 240px;
     position: absolute;
+    li:first-child {
+        margin-top: 40px;
+    }
     li {
         width: 50%;
         margin-left: 240px;
