@@ -10,13 +10,18 @@ class Main extends React.Component {
             { text: 'Customization' },
             { text: 'Components' }
         ];
+        this.headers = ['Id', 'Name', 'Status'];
+        this.tableData = [
+            [1, 'John Smith', 'Employed'],
+            [2, 'Jane', 'Sacked'],
+            [3, 'Chris', 'Employed']
+        ]
     }
 
     render() {
         return (
             <div>
-                <LeftNav ref="leftNav" menuItems={this.menuItems} />
-                <TableBuilder />
+                <TableBuilder headers={this.headers} tableData={this.tableData}/>
             </div>
         );
     }
