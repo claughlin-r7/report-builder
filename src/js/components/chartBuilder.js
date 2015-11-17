@@ -7,7 +7,7 @@ class ChartBuilder extends React.Component {
             animation: false
         };
         Chart.defaults.global.responsive = true;
-        var ctx = document.getElementById("myChart").getContext("2d");
+        var ctx = document.getElementById('chart-' + this.props.chartId).getContext("2d");
         switch(type) {
             case "line":
                 new Chart(ctx).Line(data, options);
@@ -36,7 +36,7 @@ class ChartBuilder extends React.Component {
 
     render() {
         return (
-            <canvas id="myChart" width="200" height="100"></canvas>
+            <canvas id={'chart-' + this.props.chartId} width="200" height="100"></canvas>
         )
     }
 }

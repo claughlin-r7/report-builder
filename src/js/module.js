@@ -6,6 +6,10 @@ import './../scss/main.scss';
 
 let reportData = {
     cards: [
+        {title: "Bar Chart", image: "", type: "line", configOptions: {title: "this is the user card title", url: ""}},
+        {title: "Bar Chart", image: "", type: "line", configOptions: {title: "this is the user card title", url: ""}},
+        {title: "Bar Chart", image: "", type: "line", configOptions: {title: "this is the user card title", url: ""}},
+        {title: "Bar Chart", image: "", type: "line", configOptions: {title: "this is the user card title", url: ""}},
         {title: "Bar Chart", image: "", type: "line", configOptions: {title: "this is the user card title", url: ""}}
     ]
 };

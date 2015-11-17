@@ -6,18 +6,11 @@ import ChartTypes from 'chartTypes';
 import ChartData from 'chartData';
 
 class ReportCard extends React.Component {
-    renderReportCardContent(card) {
-        if (ChartTypes.indexOf(card.type) !== -1) {
-            //Render Chart in card
-            return <ChartBuilder type={card.type} data={ChartData[card.type]} />
-        }
-    }
-
     render() {
         return (
-            <Card style={{width: '80%'}}>
+            <Card style={{width: '50%'}}>
                 <CardTitle title={this.props.card.configOptions.title} />
-                {this.renderReportCardContent(this.props.card)}
+                <ChartBuilder type={this.props.card.type} data={ChartData[this.props.card.type]} chartId={this.props.index} />
             </Card>
         )
     }

@@ -23,6 +23,7 @@
     "chart.js": "^1.0.2",
     "fixed-data-table": "^0.6.0",
     "jquery": "^2.1.4",
+    "jspdf": "git://github.com/pavestru/jsPDF.git#v0.9.1",
     "react": "^0.14.2",
     "react-bootstrap-table": "^1.2.11",
     "react-dom": "^0.14.2",
