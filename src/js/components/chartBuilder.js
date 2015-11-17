@@ -2,7 +2,10 @@ import React from 'react';
 import Chart from 'chart.js';
 
 class ChartBuilder extends React.Component {
-    displayChart(type, data, options) {
+    displayChart(type, data) {
+        let options = {
+            animation: false
+        };
         Chart.defaults.global.responsive = true;
         var ctx = document.getElementById("myChart").getContext("2d");
         switch(type) {
