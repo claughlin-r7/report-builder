@@ -12,15 +12,8 @@
     "author": "Chris Laughlin <chris_laughlin@rapid7.com>",
     "scripts": {
         "build": "webpack --progress --profile --colors",
-        "watch": "webpack-dev-server --hot --inline --progress --colors",
-        "test": "karma start",
-        "lint": "grunt checkStyle",
-        "finalTest": "karma start --log-level debug --single-run"
+        "watch": "webpack-dev-server --hot --inline --progress --colors"
     },
-    "pre-commit": [
-        "lint",
-        "finalTest"
-    ],
     "license": "MIT",
     "dependencies": {
         "alt": "0.17.1",
