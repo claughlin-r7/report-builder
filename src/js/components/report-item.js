@@ -12,7 +12,7 @@ class ReportItem extends React.Component {
                 backgroundSize: '100%',
                 backgroundRepeat: 'no-repeat',
                 backgroundPosition: 'bottom',
-                height: '120px'
+                height: '110px'
             }
         }
     }
@@ -20,11 +20,7 @@ class ReportItem extends React.Component {
     render() {
         return (
             <div className="card white darken-1" style={this.state.styles}>
-                <div className="card-content white-text">
-                    <a className="card-title-holder">
-                        <span className="card-title">{this.props.data.title}</span>
-                    </a>
-                </div>
+
             </div>
         )
     }

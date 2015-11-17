@@ -50,7 +50,7 @@ class Main extends React.Component {
             animation: true
         };
         this.cardItems = [
-            {title: "Bar Chart", image: "bar.svg", type: "Bar", configOptions: {title: "", url: ""}},
+            {image: "bar.svg", type: "Bar", configOptions: {title: "", url: ""}},
             {title: "Pie Chart", image: "pie.svg", type: "Pie", configOptions: {title: "", url: ""}},
             {title: "Line Chart", image: "line.svg", type: "Line", configOptions: {title: "", url: ""}},
             {title: "Nut Chart", image: "doughnut.svg", type: "Doughnut", configOptions: {title: "", url: ""}},
